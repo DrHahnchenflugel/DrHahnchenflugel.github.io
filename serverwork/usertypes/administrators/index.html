@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Dr Hahnchenflugel | School Server Group Policies</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+/* Style the header */
+.header {
+  padding: 20px;
+  text-align: left;
+  background: #3E8789;
+  color: white;
+}
+
+/* Increase the font size of the h1 element */
+.header h1 {
+  font-size: 70px;
+}
+
+/* Style the top navigation bar */
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+}
+
+/* Style the navigation bar links */
+.navbar a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
+/* Right-aligned link */
+.navbar a.right {
+  float: right;
+}
+
+/* Change color on hover */
+.navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Column container */
+.row {  
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Create two unequal columns that sits next to each other */
+/* Sidebar/left column */
+.side {
+  flex: 30%;
+  background-color: #f1f1f1;
+  color: black;
+  padding: 20px;
+  text-decoration: none;
+}
+
+/* Change color on hover */
+.side a:hover {
+  color: blue;
+}
+
+/* Main column */
+.main {   
+  flex: 70%;
+  background-color: white;
+  padding: 20px;
+}
+
+/* Fake image, just for this example */
+.fakeimg {
+  background-color: #aaa;
+  width: 100%;
+  padding: 20px;
+}
+
+/* Bottom navbar */
+.bottomnavbar {
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+/* Style the navigation bar links */
+.bottomnavbar a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
+/* Right-aligned link */
+.bottomnavbar a.right {
+  float: right;
+}
+
+/* Change color on hover */
+.bottomnavbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>School Server Group Policies</h1>
+  <h2>Dr. Hahnchenflugel</h2>
+</div>
+
+<div class="navbar">
+  <a href="serverwork.html">School Server Policies</a>
+  <a href="#">Link</a>
+  <a href="#">Link</a>
+  <a href="#" class="right">Zelda</a>
+</div>
+
+<div class="row">
+  <div class="side">
+    <h2>User Types</h2>
+    <a href="serverwork.html">Administrators</a><p></p>
+    <a href="serverwork.html">Managers</a><p></p>
+    <a href="serverwork.html">Instructors</a><p></p>
+    <a href="serverwork.html">Students</a><p></p>
+    <a href="serverwork.html">Workshop Users</a><p></p>
+    <h2>Computer Types</h2>
+    <a href="serverwork.html">Classroom</a><p></p>
+    <a href="serverwork.html">Workshop</a><p></p>
+    <a href="serverwork.html">Other</a><p></p>
+    <h2>File Structure (Shared Folders)</h2>
+    <a href="serverwork.html">Common Folder</a><p></p>
+    <a href="serverwork.html">Software</a><p></p>
+    <a href="serverwork.html">Student Files(TODO:?)</a><p></p>
+    <a href="serverwork.html">Unshared Folders</a><p></p>
+    <h2>Policies</h2>
+    <a href="serverwork.html">File System Policies</a><p></p>
+    <a href="serverwork.html">QOL Policies</a><p></p>
+    <a href="serverwork.html">Safety Policies</a><p></p>
+    <a href="serverwork.html">ETC</a><p></p>
+  </div>
+  <div class="main">
+    <h2>The Basics</h2>
+    <h5>TODO: Date</h5>
+    <div class="fakeimg" style="height:200px;">Image</div>
+    <p></p>
+	<b>DISCLAIMER: This is NOT an actual school. Any personal info I have is made up - names, dates, etc. I've also elected to avoid any 'mission critical' details. I'm not (that) stupid. I hope.</b>
+    <p>We run Windows Server 2012 R2 (I know) on a machine that's been EOL for the past > half decade (I know, alright?). It's fine - at least we don't use crowdstrike. Here, I host a list of all the group policies and various settings I use on our system. Updated whenever I have the time (once every few months)</p>
+	<p>The Group Policies are divided by purpose, as well as whether they're a computer or user policy.</p>
+	<p>There's also explanations for the policies and some of their meanings.</p>
+	<br></br>
+	<h2>The Setup</h2>
+    <p></p>
+	<p>The institution has 3-5 classrooms, each with 7-10 computers. This includes student computers and 1 instructor computer per class. There's also a few computers in the front - for the front desk, to display information, to show things on the TV while students wait for their class, etc. There's also a workshop - a sort-of classroom with less restriction for the computers. Additionally, each student, teacher, admin staff, etc. that works/studies at the institution has a personal account with their own (standardised) credentials. Furthermore, in the server, each account has it's own folder, which is only accessible to that account (through a home drive connection) or if explicitly searched for.</p>
+	<p>The server also has shared drives for software, common files, file sharing, etc.</p>
+	<p>Finally, the server has some additional features - for instance, it's possible to use PXE Boot to reinstall Windows on all the computers from one centralised image. This lowers the time spent doing so for the entire center from ~1 day to ~30 minutes plus change (assuming all the computers behave - if they don't it comes out to ~30-40 minutes per computer).</p>
+	<br></br>
+  </div>
+</div>
+
+<div class="bottomnavbar">
+  <a href="index.html">Home</a>
+  <a href="serverwork.html">Top</a>
+</div>
+</body>
+</html>
